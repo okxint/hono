@@ -56,7 +56,7 @@ export const replaceUrlProtocol = (urlString: string, protocol: 'ws' | 'http') =
 }
 
 export const removeIndexString = (urlString: string) => {
-  if (/^https?:\/\/[^\/]+?\/index(?=\?|$)/.test(urlString)) {
+  if (/^(?:https?|wss?):\/\/[^\/]+?\/index(?=\?|$)/.test(urlString)) {
     return urlString.replace(/\/index(?=\?|$)/, '/')
   }
   return urlString.replace(/\/index(?=\?|$)/, '')
